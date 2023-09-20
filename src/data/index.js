@@ -12,16 +12,16 @@ const data = {
     title: "Education",
     degrees: [
       {
+        title: "MBA for Corporate Finance",
+        years: "2021- Current",
+        school: "Western Sydney University, Sydney NSW, Australia"
+      },
+      {
         title: "Bachelor of Software Engineering",
         years: "2008-2013",
         school: "FPT University, Ho Chi Minh City, Vietnam"
       },
-      {
-        title: "MBA for Corporate Finance",
-        years: "2021-2023",
-        school: "Western Sydney University, Sydney NSW, Australia"
-      }
-    ]
+    ],
   },
   experiences: {
     title: "Professional Experience",
