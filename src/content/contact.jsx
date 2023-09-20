@@ -5,10 +5,10 @@ import data from 'data';
 
 const Index = () => {
   const [contact, setData] = useState({
-    name: "test",
-    email: "test@gmail.com",
-    message: "go go",
-    subject: "miss me yet",
+    name: "",
+    email: "",
+    message: "",
+    subject: "",
   });
   const [success, setSuccess] = useState();
   const [loading, setLoad] = useState(false);
