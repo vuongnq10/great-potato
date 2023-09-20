@@ -4,7 +4,7 @@ import Contact from 'content/contact';
 
 import data from 'data';
 
-export default () => {
+const Index = () => {
   return (
     <>
       <header id="header">
@@ -39,4 +39,6 @@ export default () => {
       <Contact />
     </>
   );
-}
+};
+
+export default Index;
