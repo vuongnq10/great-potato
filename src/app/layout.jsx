@@ -8,8 +8,8 @@ const Layout = ({ children }) => {
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
         <title>Vuong Nguyen - Sr. Frontend Developer - Sydney, NSW, Australia</title>
-        <meta content="" name="description" />
-        <meta content="" name="keywords" />
+        <meta name="description" content="Vuong Nguyen Quoc - Sr. Frontend Dev - Sydney, NSW" />
+        <meta name="keywords" content="Vuong Nguyen Quoc, Sr. Frontend Dev, Sydney, vuong.qnguyen10@gmail.com, React, Nextjs, html/css" />
 
         {/* <!-- Favicons --> */}
         <link href="assets/img/code-square.svg" rel="icon" />
