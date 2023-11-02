@@ -4,7 +4,7 @@ const data = {
   role: "Sr. Frontend Developer",
   description: "A passionated front-end developer who loves create stunning masterpieces. Currently, I’m studying MBA in Western Sydney University (Parramatta, Sydney campus). Therefore I'm looking for a remote job/hybrid to work in Sydney.",
   phone: '+61 491 613 237',
-  place: "Merrylands 2016, Sydney, NSW",
+  place: "Merrylands 2160, Sydney, NSW",
   email: "vuong.qnguyen10@gmail.com",
   github: "https://github.com/vuongnq10",
   linkedin: "https://www.linkedin.com/in/vuongnq",
