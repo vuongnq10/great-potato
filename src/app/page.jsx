@@ -1,6 +1,7 @@
 import About from 'content/about';
 import Resume from 'content/resume';
 import Contact from 'content/contact';
+import NFT from 'content/NFT';
 
 import data from 'data';
 
@@ -16,6 +17,7 @@ const Index = () => {
           <nav id="navbar" className="navbar">
             <ul>
               <li><div className="nav-link active" data-ref="#header">Home</div></li>
+              <li><div className="nav-link" data-ref="#nft">NFT</div></li>
               <li><div className="nav-link" data-ref="#about">About</div></li>
               <li><div className="nav-link" data-ref="#resume">Resume</div></li>
               <li><div className="nav-link" data-ref="#contact">Contact</div></li>
@@ -24,8 +26,6 @@ const Index = () => {
           </nav>
 
           <div className="social-links">
-            {/* <a href="#" className="twitter"><i className="bi bi-twitter"></i></a>
-            <a href="#" className="facebook"><i className="bi bi-facebook"></i></a> */}
             <a href="/assets/Vuong Quoc Nguyen - Senior Frontend Dev - Merrylands Sydney.pdf" className="resume"><i className="bi bi-file-text-fill"></i></a>
             <a href={data.github} className="github"><i className="bi bi-github"></i></a>
             <a href={data.linkedin} target="_blank" className="linkedin"><i className="bi bi-linkedin"></i></a>
@@ -34,6 +34,7 @@ const Index = () => {
         </div>
       </header>
 
+      <NFT />
       <About />
       <Resume />
       <Contact />
