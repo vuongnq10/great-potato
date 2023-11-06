@@ -1,6 +1,7 @@
 # NFT web3 
 
 ## Features
+  - [ ] Selfhost ipfs
   - [ ] Get NFT in user wallet and present on UI
   - [x] User can create a contract
   - [x] User use the contract to mint NFT
