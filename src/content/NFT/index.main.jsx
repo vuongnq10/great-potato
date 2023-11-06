@@ -47,8 +47,8 @@ const Index = () => {
     const signer = await provider.getSigner();
     console.log('start signer', signer)
 
-    const contract = new ethers.Contract(account, ERC721ABI, signer);
-    console.log('start contract', contract)
+    // const contract = new ethers.Contract(account, ERC721ABI, signer);
+    // console.log('start contract', contract)
 
     const nonce = await provider.getTransactionCount(newAdd);
     console.log('start nonce', nonce)

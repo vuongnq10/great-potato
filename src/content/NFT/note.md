@@ -2,9 +2,9 @@
 
 ## Features
   - [ ] Get NFT in user wallet and present on UI
-  - [ ] User can create a contract
-  - [ ] User use the contract to mint NFT
-  - [ ] User can create an NFT due to existed contract
+  - [x] User can create a contract
+  - [x] User use the contract to mint NFT
+  - [x] User can create an NFT due to existed contract
 
 | Name | Address                                    | Secret Recovery Phrase                                                           |
 | ---- | ------------------------------------------ | -------------------------------------------------------------------------------- |
