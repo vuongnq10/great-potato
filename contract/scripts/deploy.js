@@ -4,8 +4,8 @@ async function main() {
   const MyNFT = await ethers.getContractFactory("ERC721NFT");
 
   // Start deployment, returning a promise that resolves to a contract object
-  const tokenName = "";
-  const tokenSymbol = "";
+  const tokenName = "TestV1.0.0";
+  const tokenSymbol = "TVO"; // TVO = Test Version One
 
   const myNFT = await MyNFT.deploy(tokenName, tokenSymbol);
   await myNFT.deployed();

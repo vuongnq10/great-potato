@@ -31,3 +31,7 @@ contract ERC721NFT is ERC721URIStorage, Ownable {
         return newItemId;
     }
 }
+// npx hardhat compile && npx hardhat --network sepolia run scripts/deploy.js && node scripts/mint.js && 
+// step 1: update contract for get list tokens
+// step 2: complie -> deploy -> mint token -> copy ABI & override src/content/NFT/content
+// step 3: test if get all tokens works
