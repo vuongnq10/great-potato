@@ -1,8 +1,9 @@
 # NFT web3 
 
 ## Features
-  - [ ] Selfhost ipfs
+  - [ ] Selfhost ipfs - ipfs-http-client - https://ipfs.tech/
   - [ ] Get NFT in user wallet and present on UI
+  - [ ] Code run on ETH network only, check if it works on BNB
   - [x] User can create a contract
   - [x] User use the contract to mint NFT
   - [x] User can create an NFT due to existed contract
