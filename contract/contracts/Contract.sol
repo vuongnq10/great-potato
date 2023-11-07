@@ -7,13 +7,16 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
-contract MyNFT is ERC721URIStorage, Ownable {
-    string private tokenName;
-    string private tokenSymbol;
+// npx hardhat compile
+// npx hardhat --network sepolia run scripts/deploy.js
+contract ERC721NFT is ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
-    constructor() ERC721(tokenName, tokenSymbol) {}
+    constructor(
+        string memory tokenName,
+        string memory tokenSymbol
+    ) public ERC721(tokenName, tokenSymbol) {}
 
     function mint(
         address recipient,
