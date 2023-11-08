@@ -21,17 +21,6 @@ const Index = () => {
   const [account, setAccount] = useState();
   const [show, setShow] = useState('create');
 
-  useEffect(() => {
-    const run = async () => {
-      const acc = await window.ethereum.request({
-        method: "eth_requestAccounts"
-      });
-      setAccount(acc);
-    }
-
-    run();
-  }, []);
-
   const get = async () => {
     const acc = await window.ethereum.request({
       method: "eth_requestAccounts"

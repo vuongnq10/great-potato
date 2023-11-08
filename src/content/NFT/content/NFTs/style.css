@@ -46,9 +46,112 @@
   background: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   margin-bottom: 12px;
+  padding: 12px;
+}
+
+ /* input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  box-shadow: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 0;
+  transition: 0.3s;
+  color: #fff;  
+} */
+
+.create-contract .text-center {
+  margin: 12px 0px;
+}
+
+.create-contract .loading {
+  text-align: center;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.create-contract .loading:before {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  margin: 0 10px -6px 0;
+  border: 3px solid #18d26e;
+  border-top-color: #eee;
+  animation: animate-loading 1s linear infinite;
+}
+
+.create-contract input,
+.create-contract textarea {
+  border-radius: 8px;
+  box-shadow: none;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 0;
+  transition: 0.3s;
+  color: #fff;
+}
+
+.create-contract input:focus,
+.create-contract textarea:focus {
+  background-color: rgba(255, 255, 255, 0.11);
+  color: #fff;
+}
+
+.create-contract input::-moz-placeholder,
+.create-contract textarea::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
+}
+
+.create-contract input::placeholder,
+.create-contract textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  opacity: 1;
 }
 
 .create-contract input {
   padding: 10px 15px;
+}
+
+.create-contract textarea {
+  padding: 12px 15px;
+}
+
+.create-contract button[type=submit] {
+  background: #48c381;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 1s;
+  border-radius: 4px;
+}
+
+.create-contract button[type=submit]:hover {
+  background: #15bb62;
+}
+
+.create-contract .error-message {
   border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  background: #f86464;
+  text-align: left;
+  padding: 15px;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.create-contract .error-message br+br {
+  margin-top: 25px;
+}
+
+.create-contract .sent-message {
+  margin-top: 12px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  background: #2c965d;
+  text-align: center;
+  padding: 15px;
+  font-weight: 600;
 }
