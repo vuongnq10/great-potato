@@ -3,6 +3,7 @@
 
 const { Alchemy, Network } = require("alchemy-sdk");
 
+// use env to config both test net & production
 const config = {
   // apiKey: process.env.ALCHEMY_KEY, // Replace with your API key
   apiKey: "NPL_9uZ0nePQVbf3wKCECqdVeKRS4bho",
