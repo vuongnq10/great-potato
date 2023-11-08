@@ -364,6 +364,7 @@ section {
   transition: ease-in-out 0.4s;
   z-index: 2;
   margin-top: 96px;
+  margin-bottom: 96px;
 }
 
 section.section-show {
@@ -1071,6 +1072,7 @@ section .container {
 .contact .php-email-form {
   padding: 30px;
   background: rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
 }
 
 .contact .php-email-form .error-message {

@@ -1,25 +1,26 @@
 "use client"
 
-import { useEffect, useState } from "react";
-import NFT from './NFT';
+import { useEffect, useState, useContext } from "react";
 
-import './style.css';
+import NFTContext from "content/NFT/Context";
+
+import NFT from "./NFT";
+
+import "./style.css";
 
 const Index = () => {
-  const [nftList, setList] = useState(data);
+  const [nftList, setList] = useState();
+  const context = useContext(NFTContext);
+
   useEffect(() => {
     const run = async () => {
-      const [address] = await window.ethereum.request({
-        method: "eth_requestAccounts"
-      });
-      if (address) {
-        const nfts = await (await fetch(`/api/nft?address=${address}`)).json();
-        console.log(nfts);
+      if (context.account) {
+        const nfts = await (await fetch(`/api/nft?address=${context.account}`)).json();
         setList(nfts);
       }
     }
     run();
-  }, []);
+  }, [context.account]);
 
   return (
     <>
