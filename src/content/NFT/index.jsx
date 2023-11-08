@@ -19,7 +19,7 @@ const Content = ({ show }) => {
 }
 const Index = () => {
   const [account, setAccount] = useState();
-  const [show, setShow] = useState('nft');
+  const [show, setShow] = useState('create');
 
   useEffect(() => {
     const run = async () => {
@@ -37,7 +37,6 @@ const Index = () => {
       method: "eth_requestAccounts"
     });
     setAccount(acc);
-
   }
 
   return (
@@ -59,12 +58,12 @@ const Index = () => {
                 }
               }}
             >
-              <i className="bi bi-wallet"></i>  
+              <i className="bi bi-wallet"></i>
               {account && account[0] || 'Click to connect wallet'}
             </div>
             <div className="nft-item" onClick={() => setShow('create')}>
               <i className="bi bi-file-text-fill"></i>
-              Deploy contract
+              Create contract
             </div>
             <div className="nft-item" onClick={() => setShow('mint')}>
               <i className="bi bi-magic"></i>

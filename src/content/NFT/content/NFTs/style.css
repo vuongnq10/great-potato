@@ -1,0 +1,54 @@
+.nft-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 8px;
+}
+
+.nft-thumbnail {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.nft-thumbnail .img-thumb {
+  height: 366px;
+  overflow: hidden;
+}
+
+.nft-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 1s;
+}
+
+.nft-thumbnail img:hover {
+  transform: scale(1.2);
+}
+
+.nft-thumbnail .info {
+  padding: 12px;
+}
+
+.nft-thumbnail .name,
+.collection {
+  line-height: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.create-contract {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.create-contract input {
+  padding: 10px 15px;
+  border-radius: 8px;
+}

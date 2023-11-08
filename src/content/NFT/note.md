@@ -5,6 +5,7 @@
   - [ ] Get NFT in user wallet and present on UI
   - [ ] Code run on ETH network only, check if it works on BNB
   - [ ] proxy smart contract https://blog.chain.link/upgradable-smart-contracts/
+  - [ ] get NFT info from chain not from alchemy
   - [x] User can create a contract
   - [x] User use the contract to mint NFT
   - [x] User can create an NFT due to existed contract

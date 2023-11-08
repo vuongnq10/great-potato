@@ -1115,7 +1115,7 @@ section .container {
 
 .contact .php-email-form input,
 .contact .php-email-form textarea {
-  border-radius: 0;
+  border-radius: 8px;
   box-shadow: none;
   font-size: 14px;
   background: rgba(255, 255, 255, 0.08);
