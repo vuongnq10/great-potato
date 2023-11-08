@@ -6,7 +6,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+
+    "compile": "npx hardhat compile",
+    "deploy": "npx hardhat --network sepolia run contract/scripts/deploy.js",
+    "mint": "node contract/scripts/mint.js",
+    "copy-json": "node -e \"const fs = require('fs'); const data = fs.readFileSync('./contract/artifacts/contracts/Contract.sol/ERC721NFT.json'); fs.writeFileSync('./src/content/NFT/content/ERC721NFT.json', data);\"",
+    "run": "yarn compile && yarn deploy && yarn mint && yarn copy-json"
   },
   "dependencies": {
     "alchemy-sdk": "^2.10.1",
@@ -21,6 +27,12 @@
     "react-dom": "18.2.0",
     "utf-8-validate": "^5.0.10",
     "web3": "^4.2.2",
-    "ws": "^8.14.2"
+    "ws": "^8.14.2",
+
+    "@alch/alchemy-web3": "1.4.7",
+    "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@openzeppelin/contracts": "4.9.3",
+    "fs": "^0.0.1-security",
+    "hardhat": "^2.19.0"
   }
 }
