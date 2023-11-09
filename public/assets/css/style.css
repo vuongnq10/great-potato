@@ -356,13 +356,15 @@ h6 {
 --------------------------------------------------------------*/
 section {
   overflow: hidden;
-  position: absolute;
+  /* position: absolute; */
   width: 100%;
   top: 140px;
   bottom: 100%;
-  opacity: 0;
+  /* opacity: 0; */
   transition: ease-in-out 0.4s;
   z-index: 2;
+  margin-top: 96px;
+  margin-bottom: 96px;
 }
 
 section.section-show {
@@ -374,7 +376,8 @@ section.section-show {
 
 section .container {
   background: rgba(0, 0, 0, 0.9);
-  padding: 30px;
+  padding: 24px;
+  border-radius: 12px;
 }
 
 @media (max-width: 768px) {
@@ -1021,6 +1024,7 @@ section .container {
   padding: 20px;
   width: 100%;
   background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
 }
 
 .contact .info-box i.bx {
@@ -1068,6 +1072,7 @@ section .container {
 .contact .php-email-form {
   padding: 30px;
   background: rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
 }
 
 .contact .php-email-form .error-message {
@@ -1113,7 +1118,7 @@ section .container {
 
 .contact .php-email-form input,
 .contact .php-email-form textarea {
-  border-radius: 0;
+  border-radius: 8px;
   box-shadow: none;
   font-size: 14px;
   background: rgba(255, 255, 255, 0.08);

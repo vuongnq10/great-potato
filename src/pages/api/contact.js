@@ -36,9 +36,4 @@ export default function handler(req, res) {
       res.status(200);
     }
   }
-  // if (req.method === 'POST') {
-
-  // }
-
-
 }
