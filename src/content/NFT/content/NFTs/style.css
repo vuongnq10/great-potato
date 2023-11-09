@@ -42,7 +42,7 @@
   text-overflow: ellipsis;
 }
 
-.create-contract {
+.nft-contract {
   background: rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   margin-bottom: 12px;
@@ -60,17 +60,17 @@
   color: #fff;  
 } */
 
-.create-contract .text-center {
-  margin: 12px 0px;
+.nft-contract .text-center {
+  margin-top: 12px;
 }
 
-.create-contract .loading {
+.nft-contract .loading {
   text-align: center;
   border-radius: 8px;
   display: inline-block;
 }
 
-.create-contract .loading:before {
+.nft-contract .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -82,8 +82,8 @@
   animation: animate-loading 1s linear infinite;
 }
 
-.create-contract input,
-.create-contract textarea {
+.nft-contract input,
+.nft-contract textarea {
   border-radius: 8px;
   box-shadow: none;
   font-size: 14px;
@@ -93,33 +93,33 @@
   color: #fff;
 }
 
-.create-contract input:focus,
-.create-contract textarea:focus {
+.nft-contract input:focus,
+.nft-contract textarea:focus {
   background-color: rgba(255, 255, 255, 0.11);
   color: #fff;
 }
 
-.create-contract input::-moz-placeholder,
-.create-contract textarea::-moz-placeholder {
+.nft-contract input::-moz-placeholder,
+.nft-contract textarea::-moz-placeholder {
   color: rgba(255, 255, 255, 0.3);
   opacity: 1;
 }
 
-.create-contract input::placeholder,
-.create-contract textarea::placeholder {
+.nft-contract input::placeholder,
+.nft-contract textarea::placeholder {
   color: rgba(255, 255, 255, 0.3);
   opacity: 1;
 }
 
-.create-contract input {
+.nft-contract input {
   padding: 10px 15px;
 }
 
-.create-contract textarea {
+.nft-contract textarea {
   padding: 12px 15px;
 }
 
-.create-contract button[type=submit] {
+.nft-contract button[type=submit] {
   background: #48c381;
   border: 0;
   padding: 10px 30px;
@@ -128,11 +128,11 @@
   border-radius: 4px;
 }
 
-.create-contract button[type=submit]:hover {
+.nft-contract button[type=submit]:hover {
   background: #15bb62;
 }
 
-.create-contract .error-message {
+.nft-contract .error-message {
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
   background: #f86464;
@@ -142,11 +142,11 @@
   margin-top: 12px;
 }
 
-.create-contract .error-message br+br {
+.nft-contract .error-message br+br {
   margin-top: 25px;
 }
 
-.create-contract .sent-message {
+.nft-contract .sent-message {
   margin-top: 12px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);

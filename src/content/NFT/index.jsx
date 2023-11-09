@@ -21,7 +21,7 @@ const Content = ({ show }) => {
 }
 const Index = () => {
   const [account, setAccount] = useState();
-  const [show, setShow] = useState('create');
+  const [show, setShow] = useState('mint');
 
   const get = async () => {
     const acc = await window.ethereum.request({
@@ -31,7 +31,7 @@ const Index = () => {
   }
 
   return (
-    <NFTContext.Provider value={{ account }}>
+    <NFTContext.Provider value={{ account, setAccount: setAccount }}>
       <section id="nft" className="web3">
         <div className="container">
           <div className="section-title">
@@ -59,7 +59,7 @@ const Index = () => {
               </div>
               <div className="nft-item" onClick={() => setShow('mint')}>
                 <i className="bi bi-magic"></i>
-                Create NFT
+                Mint NFT
               </div>
             </div>
             <div className="col-lg-8">

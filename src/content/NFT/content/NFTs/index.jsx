@@ -9,7 +9,7 @@ import NFT from "./NFT";
 import "./style.css";
 
 const Index = () => {
-  const [nftList, setList] = useState();
+  const [nftList, setList] = useState([]);
   const context = useContext(NFTContext);
 
   useEffect(() => {
@@ -24,9 +24,9 @@ const Index = () => {
 
   return (
     <>
-      <h3 className="resume-title">Your collection</h3>
+      <h3 className="resume-title">Your Collection</h3>
       <div className="nft-grid">
-        {nftList?.ownedNfts.map((item, idx) => <NFT key={idx} {...item} />)}
+        {nftList?.ownedNfts?.map((item, idx) => <NFT key={idx} {...item} />)}
       </div>
     </>
   );
