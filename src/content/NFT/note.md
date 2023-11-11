@@ -2,7 +2,7 @@
 
 ## Features
   - [ ] Selfhost ipfs - ipfs-http-client - https://ipfs.tech/
-  - [ ] Get NFT in user wallet and present on UI
+  - [x] Get NFT in user wallet and present on UI
   - [ ] Code run on ETH network only, check if it works on BNB
   - [ ] proxy smart contract https://blog.chain.link/upgradable-smart-contracts/
   - [ ] get NFT info from chain not from alchemy

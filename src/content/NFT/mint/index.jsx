@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 import Web3 from 'web3';
-import { ethers, ContractFactory } from 'ethers';
+import { ethers } from 'ethers';
 
-import { ERC721ABI, ERC721ByteCode } from '../constants';
+import { ERC721ABI } from '../constants';
 
 const Index = () => {
   const [loading, setLoad] = useState(false);

@@ -3,9 +3,9 @@
 import { useState } from 'react';
 
 import NFTContext from './Context';
-import NFTs from './content/NFTs';
-import Create from './content/create';
-import Mint from './content/mint';
+import NFTs from './NFTs';
+import Create from './create';
+import Mint from './mint';
 
 import './style.css';
 
@@ -21,7 +21,7 @@ const Content = ({ show }) => {
 }
 const Index = () => {
   const [account, setAccount] = useState();
-  const [show, setShow] = useState('mint');
+  const [show, setShow] = useState('nft');
 
   const get = async () => {
     const acc = await window.ethereum.request({
@@ -60,6 +60,16 @@ const Index = () => {
               <div className="nft-item" onClick={() => setShow('mint')}>
                 <i className="bi bi-magic"></i>
                 Mint NFT
+              </div>
+              <div className='notice'>
+                <div dangerouslySetInnerHTML={{
+                  __html: '<strong>Notice: </strong>all features on this page are built on Sepolia-ETH test-net, please feel free to test with wallet keys'
+                }} />
+                <div>
+                  <code>
+                    crunch snow timber bicycle suspect type light that mirror load bottom honey
+                  </code>
+                </div>
               </div>
             </div>
             <div className="col-lg-8">
