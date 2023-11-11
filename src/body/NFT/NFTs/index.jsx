@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect, useState, useContext } from "react";
+import { useContext } from "react";
+import { useQuery } from '@tanstack/react-query';
 
 import { getWalletNFT } from 'api/nft';
 import NFTContext from "body/NFT/Context";
@@ -26,24 +27,20 @@ const Item = ({ rawMetadata, contract }) => {
 };
 
 const Index = () => {
-  const [nftList, setList] = useState([]);
   const context = useContext(NFTContext);
 
-  useEffect(() => {
-    const run = async () => {
-      if (context.account) {
-        const nfts = await getWalletNFT(context.account);
-        setList(nfts);
-      }
-    }
-    run();
-  }, [context.account]);
+  const { data } = useQuery({
+    queryKey: ['nftData'],
+    queryFn: async () => (await getWalletNFT(context.account))?.ownedNfts || [],
+    enabled: !!context.account
+  });
+
 
   return (
     <>
       <h3 className="resume-title">Your Collection</h3>
       <div className="nft-grid">
-        {nftList?.ownedNfts?.map((item, idx) => <Item key={idx} {...item} />)}
+        {data?.map((item, idx) => <Item key={idx} {...item} />)}
       </div>
     </>
   );

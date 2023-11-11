@@ -17,6 +17,8 @@
     "@alch/alchemy-web3": "1.4.7",
     "@nomiclabs/hardhat-ethers": "^2.2.3",
     "@openzeppelin/contracts": "4.9.3",
+    "@tanstack/react-query": "^5.8.1",
+    "@tanstack/react-query-devtools": "^5.8.2",
     "alchemy-sdk": "^2.10.1",
     "bufferutil": "^4.0.8",
     "dotenv": "^16.3.1",
