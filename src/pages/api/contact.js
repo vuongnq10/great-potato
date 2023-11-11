@@ -1,14 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 
-//qxwgotlantdhixoh
-
 import nodemailer from 'nodemailer';
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'vuong.qnguyen10@gmail.com',
-    pass: 'qxwgotlantdhixoh'
+    user: process.env.MAIL_ADDRESS,
+    pass: process.env.MAIL_KEY
   }
 });
 
@@ -19,7 +17,7 @@ export default function handler(req, res) {
 
       const mailOptions = {
         from: email,
-        to: 'vuong.qnguyen10@gmail.com',
+        to: process.env.MAIL_ADDRESS,
         subject: `${email} / ${name} / ${subject}`,
         text: message
       };
