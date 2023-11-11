@@ -4,7 +4,7 @@ const data = {
   role: "Sr. Frontend Developer",
   description: "A passionated front-end developer who loves create stunning masterpieces. Currently, I’m studying MBA in Western Sydney University (Parramatta, Sydney campus). Therefore I'm looking for a remote job/hybrid to work in Sydney.",
   phone: '+61 491 613 237',
-  place: "Merrylands 2016, Sydney, NSW",
+  place: "Merrylands 2160, Sydney, NSW",
   email: "vuong.qnguyen10@gmail.com",
   github: "https://github.com/vuongnq10",
   linkedin: "https://www.linkedin.com/in/vuongnq",
@@ -12,16 +12,16 @@ const data = {
     title: "Education",
     degrees: [
       {
+        title: "MBA for Corporate Finance",
+        years: "2021- Current",
+        school: "Western Sydney University, Sydney NSW, Australia"
+      },
+      {
         title: "Bachelor of Software Engineering",
         years: "2008-2013",
         school: "FPT University, Ho Chi Minh City, Vietnam"
       },
-      {
-        title: "MBA for Corporate Finance",
-        years: "2021-2023",
-        school: "Western Sydney University, Sydney NSW, Australia"
-      }
-    ]
+    ],
   },
   experiences: {
     title: "Professional Experience",
