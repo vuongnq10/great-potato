@@ -4,7 +4,7 @@
   - [ ] Selfhost ipfs - ipfs-http-client - https://ipfs.tech/
   - [ ] proxy smart contract https://blog.chain.link/upgradable-smart-contracts/
   - [ ] get NFT info from chain not from alchemy
-  - [x]Get NFT in user wallet and present on UI
+  - [x] Get NFT in user wallet and present on UI
   - [x] User can create a contract
   - [x] User use the contract to mint NFT
   - [x] User can create an NFT due to existed contract

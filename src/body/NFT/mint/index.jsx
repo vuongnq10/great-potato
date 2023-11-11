@@ -1,9 +1,6 @@
 import { useState } from 'react';
 
-import Web3 from 'web3';
-import { ethers } from 'ethers';
-
-import { ERC721ABI } from '../constants';
+import { mint } from 'api/metamask';
 
 const Index = () => {
   const [loading, setLoad] = useState(false);
@@ -18,30 +15,8 @@ const Index = () => {
     }
     setLoad(true);
     try {
-      const account = await ethereum?.request({
-        method: "eth_requestAccounts"
-      });
-
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-      const nonce = await provider.getTransactionCount(nftData.contractAdress);
-
-      const web3 = new Web3(window.ethereum);
-      const web3Contract = await new web3.eth.Contract(JSON.parse(ERC721ABI), nftData.contractAdress);
-
-      const tx = {
-        from: account[0],
-        to: nftData.contractAdress,
-        nonce: `${nonce}`,
-        gas: `500000`,
-        data: web3Contract.methods.mint(account[0], nftData.uri).encodeABI()
-      };
-
-      const txHash = await window.ethereum
-        .request({
-          method: 'eth_sendTransaction',
-          params: [tx],
-        });
-      setHash(txHash);
+      const hash = await mint({ contractAdress: nftData.contractAdress, uri: nftData.uri });
+      setHash(hash);
       setLoad(false);
       setError();
     } catch (error) {

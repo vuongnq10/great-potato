@@ -1,4 +1,4 @@
-import Contact from 'content/contact';
+import Contact from 'body/contact';
 
 const Index = () => <Contact />;
 

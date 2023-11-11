@@ -1,6 +1,6 @@
 
 
-import About from 'content/about';
+import About from 'body/about';
 
 const Index = () => <About />;
 

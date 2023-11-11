@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from 'react';
+import { send as sendMail } from 'api/contact';
 import data from 'data';
 
 const Index = () => {
@@ -13,21 +14,22 @@ const Index = () => {
   const [success, setSuccess] = useState();
   const [loading, setLoad] = useState(false);
 
-  const send = () => {
+  const send = async () => {
     setLoad(true);
-    fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(contact),
-    }).then(e => e.json()).then(e => {
-      if (e.success) {
+    try {
+      const res = await sendMail(contact);
+      if (res.success) {
         setSuccess('true');
         setData({ name: "", email: "", message: "", subject: "" });
       } else {
         setSuccess('false');
       }
+    } catch (error) {
+      setSuccess('false');
+    } finally {
       setLoad(false);
-    });
+    }
+
   };
 
   return (
@@ -109,12 +111,12 @@ const Index = () => {
             )}
             {success && (
               <>
-                <div className="error-message"></div>
-                <div className="sent-message">Your message has been sent. Thank you!</div>
+                {success == 'false' && <div className="error-message">Ops, Something went wrong !</div>}
+                {success == 'true' && <div className="sent-message">Your message has been sent. Thank you!</div>}
               </>
             )}
           </div>
-          <div className="text-center"><button type="submit" onClick={send}>Send Message</button></div>
+          <div className="text-center"><button type="submit" onClick={() => !loading && send()}>Send Message</button></div>
         </div>
 
       </div>

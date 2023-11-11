@@ -1,9 +1,9 @@
 
 
-import About from 'content/about';
-import Resume from 'content/resume';
-import Contact from 'content/contact';
-import NFT from 'content/NFT';
+import About from 'body/about';
+import Resume from 'body/resume';
+import Contact from 'body/contact';
+import NFT from 'body/NFT';
 
 import data from 'data';
 

@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+import { getAccount } from 'api/metamask';
+
 import NFTContext from './Context';
 import NFTs from './NFTs';
 import Create from './create';
@@ -24,9 +26,7 @@ const Index = () => {
   const [show, setShow] = useState('nft');
 
   const get = async () => {
-    const acc = await window.ethereum.request({
-      method: "eth_requestAccounts"
-    });
+    const acc = await getAccount();
     setAccount(acc);
   }
 

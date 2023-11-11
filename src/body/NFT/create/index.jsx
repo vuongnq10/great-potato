@@ -1,7 +1,7 @@
-import { ethers, ContractFactory } from 'ethers';
+
 import { useState } from 'react';
 
-import { ERC721ABI, ERC721ByteCode } from '../constants';
+import { createContact } from 'api/metamask';
 
 const Index = () => {
   const [loading, setLoad] = useState(false);
@@ -16,19 +16,9 @@ const Index = () => {
     }
     setLoad(true);
     try {
-      await ethereum?.request({
-        method: "eth_requestAccounts"
-      });
+      const address = await createContact({ name: tokenData.tokenName, symbol: tokenData.tokenSymbol });
 
-      const provider = new ethers.providers.Web3Provider(window.ethereum);
-
-      const signer = await provider.getSigner();
-      const factory = new ContractFactory(ERC721ABI, ERC721ByteCode, signer);
-
-      const contract = await factory.deploy(tokenData.tokenName, tokenData.tokenSymbol);
-      await contract.deployTransaction.wait();
-
-      setContractAddress(contract.address)
+      setContractAddress(address)
       setError();
       setLoad(false);
     } catch (error) {

@@ -1,6 +1,6 @@
 
 
-import Resume from 'content/resume';
+import Resume from 'body/resume';
 
 const Index = () => <Resume />
 

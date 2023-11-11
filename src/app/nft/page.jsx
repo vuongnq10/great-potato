@@ -1,4 +1,4 @@
-import NFT from 'content/NFT';
+import NFT from 'body/NFT';
 
 const Index = () => <NFT />;
 
