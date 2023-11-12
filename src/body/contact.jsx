@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from 'react';
+import { useMutation } from '@tanstack/react-query';
+
 import { send as sendMail } from 'api/contact';
 import data from 'data';
 
@@ -11,26 +13,12 @@ const Index = () => {
     message: "",
     subject: "",
   });
-  const [success, setSuccess] = useState();
-  const [loading, setLoad] = useState(false);
 
-  const send = async () => {
-    setLoad(true);
-    try {
-      const res = await sendMail(contact);
-      if (res.success) {
-        setSuccess('true');
-        setData({ name: "", email: "", message: "", subject: "" });
-      } else {
-        setSuccess('false');
-      }
-    } catch (error) {
-      setSuccess('false');
-    } finally {
-      setLoad(false);
-    }
-
-  };
+  const { data: resp, mutate, status } = useMutation({
+    mutationKey: ['sendContact'],
+    mutationFn: async () => (await sendMail(contact))?.success || false,
+    onSuccess: () => setData({ name: "", email: "", message: "", subject: "" }),
+  });
 
   return (
     <section id="contact" className="contact">
@@ -106,17 +94,13 @@ const Index = () => {
             ></textarea>
           </div>
           <div className="my-3">
-            {loading && (
+            {status === 'pending' && (
               <div className="loading">Loading</div>
             )}
-            {success && (
-              <>
-                {success == 'false' && <div className="error-message">Ops, Something went wrong !</div>}
-                {success == 'true' && <div className="sent-message">Your message has been sent. Thank you!</div>}
-              </>
-            )}
+            {(status == 'error' || resp === false) && <div className="error-message">Ops, Something went wrong !</div>}
+            {status == 'success' && resp === true && <div className="sent-message">Your message has been sent. Thank you!</div>}
           </div>
-          <div className="text-center"><button type="submit" onClick={() => !loading && send()}>Send Message</button></div>
+          <div className="text-center"><button type="submit" onClick={() => status === 'idle' && mutate()}>Send Message</button></div>
         </div>
 
       </div>
