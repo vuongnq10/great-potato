@@ -1,7 +1,19 @@
 .nft-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 8px;
+}
+
+@media (min-width: 576px) {
+  .nft-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .nft-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .nft-thumbnail {
@@ -49,7 +61,7 @@
   padding: 12px;
 }
 
- /* input {
+/* input {
   padding: 10px 15px;
   border-radius: 8px;
   box-shadow: none;

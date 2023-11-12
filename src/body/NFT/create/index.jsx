@@ -18,7 +18,7 @@ const Index = () => {
       <h3 className="resume-title">Create Your Contract</h3>
       <div className="nft-contract">
         <div className="row">
-          <div className="col-md-6 form-group">
+          <div className="col-md-8 form-group">
             <input
               type="text"
               className="form-control"
@@ -27,7 +27,7 @@ const Index = () => {
               onChange={e => setData({ ...tokenData, tokenName: e?.target?.value })}
             />
           </div>
-          <div className="col-md-6 form-group mt-3 mt-md-0">
+          <div className="col-md-4 form-group mt-3 mt-md-0">
             <input type="email" className="form-control" placeholder="Token's symbol"
               value={tokenData.tokenSymbol}
               onChange={e => setData({ ...tokenData, tokenSymbol: e?.target?.value })}
