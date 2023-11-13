@@ -13,7 +13,13 @@ const Layout = ({ children }) => {
         <title>Vuong Nguyen - Sr. Frontend Developer - Sydney, NSW, Australia</title>
         <meta name="description" content="Vuong Nguyen Quoc - Sr. Frontend Dev - Sydney, NSW" />
         <meta name="keywords" content="Vuong Nguyen Quoc, Sr. Frontend Dev, Sydney, vuong.qnguyen10@gmail.com, React, Nextjs, html/css" />
-
+        <meta property="og:title" content="Vuong Nguyen Quoc - Sr. Frontend Dev - Sydney, NSW" />
+        <meta property="og:description" content="Vuong Nguyen Quoc, Sr. Frontend Dev, Sydney, vuong.qnguyen10@gmail.com, React, Nextjs, html/css" />
+        <meta property="og:image" content="assets/img/me.jpeg" />
+        <meta property="og:url" content="https://vuongnq.netlify.app/" />
+        <meta property="og:site_name" content="vuongnq.netlify.app/" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://vuongnq.netlify.app/" />
         {/* <!-- Favicons --> */}
         <link href="assets/img/code-square.svg" rel="icon" />
         <link href="assets/img/code-square.svg" rel="apple-touch-icon" />
@@ -27,6 +33,7 @@ const Layout = ({ children }) => {
         <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet" />
         {/* <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" /> */}
         <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet" />
+
 
         {/* <!-- Template Main CSS File --> */}
         <link href="assets/css/style.css" rel="stylesheet" />
