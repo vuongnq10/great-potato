@@ -10,6 +10,7 @@ const client = new MongoClient(process.env.DATABASE_STR, {
   }
 });
 
+
 export const insert = async ({ data, collection }) => {
   try {
     await client.connect();
