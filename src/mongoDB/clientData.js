@@ -1,4 +1,4 @@
-import { select, insert } from './';
+import { select, insert } from '.';
 
 const COLLECTION = "client_data";
 
