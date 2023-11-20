@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Script from 'next/script';
 
 import data from 'data';
+import Count from 'body/count';
 
 const Layout = ({ children }) => {
   return (
@@ -62,6 +63,7 @@ const Layout = ({ children }) => {
 
         </header >
         {children}
+        <Count />
         {/* <Script src="assets/vendor/purecounter/purecounter_vanilla.js" />
         <Script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" />
         <Script src="assets/vendor/glightbox/js/glightbox.min.js" />
