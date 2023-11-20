@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "NODE_ENV=production next build",
+    "start": "NODE_ENV=production next start",
     "lint": "next lint",
     "compile": "npx hardhat compile",
     "deploy": "npx hardhat --network sepolia run contract/scripts/deploy.js",
@@ -26,6 +26,7 @@
     "ethers": "5.7.2",
     "fs": "^0.0.1-security",
     "hardhat": "^2.19.0",
+    "mongodb": "^6.3.0",
     "next": "13.4.19",
     "nodemailer": "^6.9.5",
     "react": "18.2.0",
