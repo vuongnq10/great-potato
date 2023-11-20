@@ -18,7 +18,7 @@ export default async function handler(req, res) {
           console.log(error);
         }
       }
-      return res.status(200).json({ success: true });
+      return res.status(200).json({ success: true, env: ENV });
     }
     default: {
       return res.status(200);
