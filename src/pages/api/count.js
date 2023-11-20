@@ -1,4 +1,4 @@
-import { selectAll, write } from 'pages/mongoDB/clientData';
+import { selectAll, write } from 'mongoDB/clientData';
 
 const ENV = process.env.NODE_ENV;
 
