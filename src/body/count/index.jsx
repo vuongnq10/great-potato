@@ -4,15 +4,10 @@ import { count } from 'api/count';
 
 const Index = () => {
   useEffect(() => {
-    count({
-      referrer: document?.referrer,
-      timeZone: new Date(),
-      screenWidth: screen?.width,
-      screenHeight: screen?.height,
-      userAgent: navigator?.userAgent,
-      lang: navigator?.language,
-      platform: navigator?.platform,
-    });
+    const owner = localStorage?.getItem('owner') || null;
+    if (!owner) {
+      count();
+    }
   }, []);
   return <></>
 };

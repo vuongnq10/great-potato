@@ -10,7 +10,14 @@ export default async function handler(req, res) {
       return res.status(200).json(data);
     }
     case 'post': {
-      const body = req.body;
+      const body = {
+        ...req.headers,
+
+        // TODO: check if get User's IP
+        ip: `${req.headers['x-forwarded-for'] || ''}`.split(/, /)[0],
+        socket: { remoteAddress: req?.socket?.remoteAddress }
+      };
+      console.log(body)
       if (ENV === 'production') {
         try {
           write(body);
@@ -18,7 +25,8 @@ export default async function handler(req, res) {
           console.log(error);
         }
       }
-      return res.status(200).json({ success: true, env: ENV });
+
+      return res.status(200).json({ success: true, env: ENV === 'production' ? ENV : body });
     }
     default: {
       return res.status(200);
