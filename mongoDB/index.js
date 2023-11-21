@@ -16,7 +16,7 @@ export const insert = async ({ data, collection }) => {
   try {
     const database = client.db(DATABASE_NAME);
     const greatePotato = database.collection(collection);
-    await greatePotato.insertOne(data);
+    return await greatePotato.insertOne(data);
   } catch (error) {
     console.log(error);
   } finally {
