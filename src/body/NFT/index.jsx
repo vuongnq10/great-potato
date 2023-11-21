@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from 'react';
+import { useMutation } from '@tanstack/react-query';
 
 import { getAccount } from 'api/metamask';
 
@@ -22,16 +23,15 @@ const Content = ({ show }) => {
   }
 }
 const Index = () => {
-  const [account, setAccount] = useState();
   const [show, setShow] = useState('nft');
 
-  const get = async () => {
-    const acc = await getAccount();
-    setAccount(acc);
-  }
+  const { data: account, mutate } = useMutation({
+    mutationKey: ['getNFT'],
+    mutationFn: async () => await getAccount(),
+  });
 
   return (
-    <NFTContext.Provider value={{ account, setAccount: setAccount }}>
+    <NFTContext.Provider value={{ account, setAccount: mutate }}>
       <section id="nft" className="web3">
         <div className="container">
           <div className="section-title">
@@ -46,7 +46,7 @@ const Index = () => {
                 onClick={() => {
                   setShow('nft');
                   if (!account) {
-                    get();
+                    mutate();
                   }
                 }}
               >
