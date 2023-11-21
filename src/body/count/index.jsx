@@ -4,10 +4,7 @@ import { count } from 'api/count';
 
 const Index = () => {
   useEffect(() => {
-    const owner = localStorage?.getItem('owner') || null;
-    if (!owner) {
-      count();
-    }
+    count();
   }, []);
   return <></>
 };
