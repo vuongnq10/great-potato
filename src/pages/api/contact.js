@@ -29,9 +29,10 @@ export default function handler(req, res) {
           res.status(200).json({ success: true });
         }
       });
+      return;
     }
     case 'GET': {
-      res.status(200);
+      return res.status(200);
     }
   }
 }
