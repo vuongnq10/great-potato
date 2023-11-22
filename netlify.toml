@@ -1,0 +1,2 @@
+[functions."cronjob"]
+schedule = "*/5 * * * *"
