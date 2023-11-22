@@ -68,7 +68,8 @@ const bbSol = async () => {
     ...bbData,
     ticket: "SOL/USDT",
     type: "bbCheck",
-    price
+    price,
+    at: new Date()
   }
   console.log(data)
   insert({ data });
