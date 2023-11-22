@@ -24,7 +24,7 @@ const insert = async ({ data }) => {
   }
 }
 
-const handlerSol = schedule('*/5 * * * *', async () => {
+const handlerSol = async () => {
   const { input } = await getDetachSourceFromOHLCV('binance', 'SOL/USDT', '5m', false);
   const result = await kstCross(input, 10, 15, 20, 30, 10, 10, 10, 15, 9);
   const price = await ticker('binance', 'SOL/USDT');
@@ -36,13 +36,13 @@ const handlerSol = schedule('*/5 * * * *', async () => {
     ticket: 'SOL/USDT',
     typ: "kstCross"
   }
+  console.log(data)
   if (result.direction !== 'none') {
     insert({ data });
-    console.log(data)
   }
-});
+}
 
-const handlerSEI = schedule('*/5 * * * *', async () => {
+const handlerSEI = async () => {
   const { input } = await getDetachSourceFromOHLCV('binance', 'SEI/USDT', '5m', false);
   const result = await kstCross(input, 10, 15, 20, 30, 10, 10, 10, 15, 9);
   const price = await ticker('binance', 'SEI/USDT');
@@ -54,25 +54,31 @@ const handlerSEI = schedule('*/5 * * * *', async () => {
     ticket: 'SEI/USDT',
     typ: "kstCross"
   }
+  console.log(data)
   if (result.direction !== 'none') {
     insert({ data });
-    console.log(data)
   }
-});
+}
 
-const bbSol = schedule('*/5 * * * *', async () => {
+const bbSol = async () => {
   const { input } = await getDetachSourceFromOHLCV('binance', 'SOL/USDT', '15m', false);
   const price = await ticker('binance', 'SOL/USDT');
 
   let bbData = await bbCheck(50, 2, input);
-  insert({
-    data: {
-      ...bbData,
-      ticket: "SOL/USDT",
-      type: "bbCheck",
-      price
-    }
-  });
+  const data = {
+    ...bbData,
+    ticket: "SOL/USDT",
+    type: "bbCheck",
+    price
+  }
+  console.log(data)
+  insert({ data });
+}
+
+const handler = schedule('*/5 * * * *', () => {
+  handlerSol();
+  handlerSEI();
+  bbSol();
 });
 
-export { handlerSol, handlerSEI, bbSol }
+export { handler }
