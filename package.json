@@ -47,6 +47,5 @@
     "tls": false,
     "dns": false,
     "fs": false
-  },
-  "type": "module"
+  }
 }

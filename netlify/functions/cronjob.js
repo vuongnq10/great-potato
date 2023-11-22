@@ -1,6 +1,6 @@
-import { schedule } from '@netlify/functions';
-import { bbCheck, ticker, kstCross, getDetachSourceFromOHLCV } from 'trading-indicator';
-import { MongoClient, ServerApiVersion } from "mongodb";
+const { schedule } = require('@netlify/functions');
+const { bbCheck, ticker, kstCross, getDetachSourceFromOHLCV } = require('trading-indicator');
+const { MongoClient, ServerApiVersion } = require('mongodb');
 
 const DATABASE_NAME = "trading";
 const client = new MongoClient(process.env.DATABASE_STR, {
