@@ -81,4 +81,4 @@ const handler = schedule('*/5 * * * *', () => {
   bbSol();
 });
 
-export { handler }
+module.exports = { handler }
