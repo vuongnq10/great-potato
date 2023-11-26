@@ -12,6 +12,7 @@ export default async function handler(req, res) {
     case 'post': {
       const body = {
         ...req.headers,
+        ...req.body || {},
         ip: `${req.headers['x-forwarded-for'] || ''}`.split(/, /)[0],
         socket: { remoteAddress: req?.socket?.remoteAddress }
       };
