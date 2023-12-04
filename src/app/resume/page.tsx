@@ -1,7 +1,5 @@
-
-
 import Resume from 'body/resume';
 
-const Index = () => <Resume />
+const Index: React.FC<any> = () => <Resume />
 
 export default Index;

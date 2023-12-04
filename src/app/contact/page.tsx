@@ -1,6 +1,6 @@
 import Contact from 'body/contact';
 
-const Index = () => <Contact />;
+const Index: React.FC<any> = () => <Contact />;
 
 export default Index;
 

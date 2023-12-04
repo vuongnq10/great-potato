@@ -1,7 +1,5 @@
-
-
 import About from 'body/about';
 
-const Index = () => <About />;
+const Index: React.FC<any> = () => <About />;
 
 export default Index;
