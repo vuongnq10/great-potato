@@ -11,10 +11,12 @@
     "deploy": "npx hardhat --network sepolia run contract/scripts/deploy.js",
     "mint": "node contract/scripts/mint.js",
     "copy-json": "node -e \"const fs = require('fs'); const data = fs.readFileSync('./contract/artifacts/contracts/Contract.sol/ERC721NFT.json'); fs.writeFileSync('./src/content/NFT/content/ERC721NFT.json', data);\"",
-    "run": "yarn compile && yarn deploy && yarn mint && yarn copy-json"
+    "run": "yarn compile && yarn deploy && yarn mint && yarn copy-json",
+    "test": "jest --watch"
   },
   "dependencies": {
     "@alch/alchemy-web3": "1.4.7",
+    "@jest/globals": "^29.7.0",
     "@nomiclabs/hardhat-ethers": "^2.2.3",
     "@openzeppelin/contracts": "4.9.3",
     "@tanstack/react-query": "^5.8.1",
@@ -45,5 +47,11 @@
     "tls": false,
     "dns": false,
     "fs": false
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.1.5",
+    "@testing-library/react": "^14.1.2",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
   }
 }
