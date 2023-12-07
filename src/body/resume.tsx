@@ -1,6 +1,7 @@
+import React from 'react';
 import data from 'data';
 
-const Index = () => (
+const Index: React.FC<{}> = () => (
   <section id="resume" className="resume">
     <div className="container">
 
@@ -17,7 +18,6 @@ const Index = () => (
               <h4>{item.title}</h4>
               <h5>{item.years}</h5>
               <p><em>{item.school}</em></p>
-              {/* <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p> */}
             </div>
           ))}
         </div>

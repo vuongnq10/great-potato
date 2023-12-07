@@ -1,13 +1,20 @@
 "use client";
-
+import React from 'react';
 import { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 
 import { send as sendMail } from 'api/contact';
 import data from 'data';
 
-const Index = () => {
-  const [contact, setData] = useState({
+type State = {
+  name: string;
+  email: string;
+  message: string;
+  subject: string;
+}
+
+const Index: React.FC<{}> = () => {
+  const [contact, setData] = useState<State>({
     name: "",
     email: "",
     message: "",
