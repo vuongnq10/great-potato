@@ -1,7 +1,7 @@
 import React from 'react';
 import data from 'data';
 
-const Index: React.FC<any> = () => (
+const Index: React.FC<{}> = () => (
   <>
     <header id="header">
       <div className="container">
