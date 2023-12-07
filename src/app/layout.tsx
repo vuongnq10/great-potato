@@ -1,4 +1,5 @@
 "use client"
+import React from 'react';
 import Link from 'next/link';
 import Script from 'next/script';
 import {
@@ -10,7 +11,11 @@ import data from 'data';
 import Count from 'body/count';
 
 const queryClient = new QueryClient();
-const Layout = ({ children }) => (
+
+type Props = {
+  children: React.ReactNode
+}
+const Layout: React.FC<Props> = ({ children }) => (
   <html lang="en">
     <head>
       <meta charSet="utf-8" />
