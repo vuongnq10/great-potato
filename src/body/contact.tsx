@@ -95,7 +95,7 @@ const Index: React.FC<{}> = () => {
             />
           </div>
           <div className="form-group mt-3">
-            <textarea className="form-control" name="message" rows="5" placeholder="Message" required
+            <textarea className="form-control" name="message" rows={5} placeholder="Message" required
               value={contact.message}
               onChange={e => setData({ ...contact, message: e?.target?.value })}
             ></textarea>
