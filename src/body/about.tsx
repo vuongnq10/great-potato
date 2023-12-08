@@ -1,10 +1,10 @@
 "use client"
-
+import React from 'react';
 import { useEffect, useState } from 'react';
 import data from 'data';
 
-const Index = () => {
-  const [url, setUrl] = useState('');
+const Index: React.FC<{}> = () => {
+  const [url, setUrl] = useState<string>('');
   useEffect(() => {
     setUrl(window.location.origin);
   }, []);

@@ -1,5 +1,5 @@
 "use client"
-
+import React from 'react';
 import { useState } from 'react';
 import { useMutation } from '@tanstack/react-query';
 
@@ -22,8 +22,9 @@ const Content = ({ show }) => {
       return <NFTs />
   }
 }
-const Index = () => {
-  const [show, setShow] = useState('nft');
+
+const Index: React.FC<{}> = () => {
+  const [show, setShow] = useState<string>('nft');
 
   const { data: account, mutate } = useMutation({
     mutationKey: ['getNFT'],

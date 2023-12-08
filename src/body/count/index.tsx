@@ -1,8 +1,9 @@
 "use client"
+import React from 'react';
 import { useEffect } from 'react';
 import { count } from 'api/count';
 
-const Index = () => {
+const Index: React.FC<{}> = () => {
   useEffect(() => {
     count();
   }, []);

@@ -1,5 +1,5 @@
 "use client"
-
+import React from 'react';
 import { useContext } from "react";
 import { useQuery } from '@tanstack/react-query';
 
@@ -11,7 +11,7 @@ import "./style.css";
 const domain = "https://ipfs.io/ipfs/";
 const protocol = "ipfs://";
 
-const Item = ({ rawMetadata, contract }) => {
+const Item: React.FC<any> = ({ rawMetadata, contract }) => {
   const { name, image } = rawMetadata || {}
   return (
     <div className="nft-thumbnail">
@@ -26,7 +26,7 @@ const Item = ({ rawMetadata, contract }) => {
   )
 };
 
-const Index = () => {
+const Index: React.FC<any> = () => {
   const context = useContext(NFTContext);
 
   const { data } = useQuery({
