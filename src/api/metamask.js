@@ -10,7 +10,7 @@ export const getAccount = () => {
 }
 
 export const mint = async ({ contractAdress, uri }) => {
-  const account = await ethereum?.request({
+  const account = await window?.ethereum?.request({
     method: "eth_requestAccounts"
   });
 

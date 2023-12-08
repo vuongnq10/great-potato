@@ -4,14 +4,18 @@ import { useContext } from "react";
 import { useQuery } from '@tanstack/react-query';
 
 import { getWalletNFT } from 'api/nft';
-import NFTContext from "body/NFT/Context";
+import NFTContext, { NFTType } from "body/NFT/Context";
 
 import "./style.css";
 
 const domain = "https://ipfs.io/ipfs/";
 const protocol = "ipfs://";
 
-const Item: React.FC<any> = ({ rawMetadata, contract }) => {
+type ItemType = {
+  rawMetadata: any,
+  contract: any,
+}
+const Item: React.FC<ItemType> = ({ rawMetadata, contract }) => {
   const { name, image } = rawMetadata || {}
   return (
     <div className="nft-thumbnail">
@@ -27,7 +31,7 @@ const Item: React.FC<any> = ({ rawMetadata, contract }) => {
 };
 
 const Index: React.FC<any> = () => {
-  const context = useContext(NFTContext);
+  const context = useContext<NFTType>(NFTContext);
 
   const { data } = useQuery({
     queryKey: ['nftData'],
