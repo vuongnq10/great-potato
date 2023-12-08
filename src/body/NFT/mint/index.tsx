@@ -1,10 +1,16 @@
+import React from 'react';
 import { Formik } from 'formik';
 import { useMutation } from '@tanstack/react-query';
 
 import { mint } from 'api/metamask';
 
-const Index = () => {
-
+interface FormValues {
+  contractAdress: string;
+  uri: string;
+  empty: string,
+}
+const Index: React.FC<any> = () => {
+  const initialValues: FormValues = { contractAdress: "", uri: "", empty: "" };
   const { data: resp, mutate, status } = useMutation({
     mutationKey: ['mintNFT'],
     mutationFn: async input => await mint(input),
@@ -14,7 +20,7 @@ const Index = () => {
     <>
       <h3 className="resume-title">Mint Your NFT</h3>
       <Formik
-        initialValues={{ contractAdress: "", uri: "" }}
+        initialValues={initialValues}
         validate={values => {
           if (!values.contractAdress || !values.uri)
             return { empty: "Please input Contract's address & URI" }
