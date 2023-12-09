@@ -31,7 +31,7 @@ const Item: React.FC<ItemType> = ({ rawMetadata, contract }) => {
 };
 
 const Index: React.FC<any> = () => {
-  const context = useContext<NFTType>(NFTContext);
+  const context: NFTType = useContext<NFTType>(NFTContext);
 
   const { data } = useQuery({
     queryKey: ['nftData'],
