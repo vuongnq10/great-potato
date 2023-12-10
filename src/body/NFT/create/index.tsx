@@ -3,11 +3,19 @@ import { useMutation } from '@tanstack/react-query';
 
 import { createContact } from 'api/metamask';
 
+type UIContractType = {
+  tokenName: string,
+  tokenSymbol: string,
+  error: string,
+}
 const Index = () => {
-
+  const initialValue: UIContractType = { tokenName: "", tokenSymbol: "", error: "" };
   const { data: resp, mutate, status } = useMutation({
     mutationKey: ['createContract'],
-    mutationFn: async input => await createContact({ name: input.tokenName, symbol: input.tokenSymbol }),
+    mutationFn: async (input: UIContractType) => await createContact({
+      name: input.tokenName, symbol: input.tokenSymbol,
+      empty: ''
+    }),
   });
 
   return (
@@ -15,7 +23,7 @@ const Index = () => {
       <h3 className="resume-title">Create Your Contract</h3>
       <div className="nft-contract">
         <Formik
-          initialValues={{ tokenName: "", tokenSymbol: "" }}
+          initialValues={initialValue}
           validate={values => {
             if (!values.tokenName || !values.tokenSymbol)
               return { empty: "Please input Token's Name & Token's Symbol" }
@@ -24,7 +32,7 @@ const Index = () => {
             mutate(values)
           }}
         >
-          {({ errors, handleSubmit, handleChange }) => (
+          {({ errors, handleSubmit, handleChange }: any) => (
             <form onSubmit={handleSubmit}>
               <div className="row">
                 <div className="col-md-8 form-group">
