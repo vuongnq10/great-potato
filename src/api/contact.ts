@@ -1,4 +1,4 @@
-export const send = async ({ name = "", email = "", message = "", subject = "" }) =>
+export const send = async ({ name = "", email = "", message = "", subject = "" }): Promise<{ success: boolean }> =>
   await (await fetch('/api/contact', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
