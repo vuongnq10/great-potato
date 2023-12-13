@@ -1,4 +1,4 @@
-export const count = async (data = {}): Promise<any> =>
+export const count = async (data: any = {}): Promise<any> =>
   await fetch('/api/count', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
