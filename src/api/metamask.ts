@@ -11,7 +11,12 @@ export const getAccount = (): Promise<any> => {
   });
 }
 
-export const mint = async ({ contractAdress, uri }): Promise<string> => {
+type MintType = {
+  contractAdress: string,
+  uri: string,
+}
+export const mint = async (data: MintType): Promise<string> => {
+  const { contractAdress, uri } = data;
   // @ts-ignore:next-line
   const account = await window?.ethereum?.request({
     method: "eth_requestAccounts"

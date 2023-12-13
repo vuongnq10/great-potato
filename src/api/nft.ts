@@ -32,4 +32,5 @@ export type NFTList = {
   ownedNfts: Array<NFTItem>,
   totalCount: number
 }
-export const getWalletNFT = async (account: string): Promise<NFTList> => await (await fetch(`/api/nft?address=${account}`)).json();
+export const getWalletNFT = async (account: string): Promise<NFTList> =>
+  await (await fetch(`/api/nft?address=${account}`)).json();
