@@ -1,8 +1,8 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 
-const DATABASE_NAME = "great_potato";
+const DATABASE_NAME: string = "great_potato";
 
-const client = new MongoClient(process.env.DATABASE_STR, {
+const client = new MongoClient(`${process.env.DATABASE_STR}`, {
   serverApi: {
     version: ServerApiVersion.v1,
     strict: true,
@@ -12,7 +12,8 @@ const client = new MongoClient(process.env.DATABASE_STR, {
 
 client.connect();
 
-export const insert = async ({ data, collection }) => {
+export const insert = async (params: any): Promise<any> => {
+  const { data, collection } = params;
   try {
     const database = client.db(DATABASE_NAME);
     const greatePotato = database.collection(collection);
@@ -23,7 +24,8 @@ export const insert = async ({ data, collection }) => {
   }
 }
 
-export const select = async ({ query = {}, collection }) => {
+export const select = async (params: any): Promise<any> => {
+  const { query = {}, collection } = params;
   try {
     const database = client.db(DATABASE_NAME);
     const greatePotato = database.collection(collection);
