@@ -10,7 +10,7 @@ const config = {
 
 const alchemy = new Alchemy(config);
 
-export default async function handler(req, res) {
+export default async function handler(req, res): Promise<any> {
   switch (`${req.method}`.toLowerCase()) {
     case 'get': {
       const address = req.query?.address;
@@ -19,6 +19,7 @@ export default async function handler(req, res) {
         return res.status(200).json(response);
       }
       res.status(403);
+      return;
     }
     default: {
       res.status(200);
