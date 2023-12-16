@@ -1,3 +1,4 @@
+// @ts-ignore:next-line
 import { selectAll, write } from 'mongoDB/clientData';
 
 const ENV = process.env.NODE_ENV;
