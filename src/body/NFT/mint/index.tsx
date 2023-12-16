@@ -13,6 +13,7 @@ const Index: React.FC<any> = () => {
   const initialValues: FormValues = { contractAdress: "", uri: "", empty: "" };
   const { data: resp, mutate, status } = useMutation({
     mutationKey: ['mintNFT'],
+    // @ts-ignore:next-line
     mutationFn: async input => await mint(input),
   });
 
@@ -26,6 +27,7 @@ const Index: React.FC<any> = () => {
             return { empty: "Please input Contract's address & URI" }
         }}
         onSubmit={values => {
+          // @ts-ignore:next-line
           mutate(values)
         }}
       >
