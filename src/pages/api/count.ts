@@ -2,7 +2,7 @@ import { selectAll, write } from 'mongoDB/clientData';
 
 const ENV = process.env.NODE_ENV;
 
-export default async function handler(req, res) {
+export default async function handler(req, res): Promise<any> {
 
   switch (`${req.method}`.toLowerCase()) {
     case 'get': {
