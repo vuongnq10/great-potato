@@ -31,10 +31,12 @@ const Item: React.FC<ItemType> = ({ rawMetadata, contract }) => {
 };
 
 const Index: React.FC<any> = () => {
+  // @ts-ignore:next-line
   const context: NFTType = useContext<NFTType>(NFTContext);
 
   const { data } = useQuery({
     queryKey: ['nftData'],
+    // @ts-ignore:next-line
     queryFn: async () => (await getWalletNFT(context.account))?.ownedNfts || [],
     enabled: !!context.account
   });
