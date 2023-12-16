@@ -45,7 +45,7 @@ function SiteMap() {
   // getServerSideProps will do the heavy lifting
 }
 
-export async function getServerSideProps({ res }) {
+export async function getServerSideProps({ res }): Promise<{ props: any }> {
 
   res.setHeader('Content-Type', 'text/xml');
   res.write(xml);
