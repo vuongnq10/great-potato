@@ -10,7 +10,7 @@ const transporter = nodemailer.createTransport({
   }
 });
 
-export default function handler(req, res) {
+export default function handler(req, res): any {
   switch (req.method) {
     case 'POST': {
       const { name, email, subject, message } = req.body;
@@ -29,7 +29,7 @@ export default function handler(req, res) {
           res.status(200).json({ success: true });
         }
       });
-      return;
+      return {};
     }
     case 'GET': {
       return res.status(200);
