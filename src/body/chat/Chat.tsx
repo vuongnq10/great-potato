@@ -1,6 +1,6 @@
 "use client"
 import React, { useState, useContext } from 'react';
-import { SocketContext, useSocket } from './useService';
+import { SocketContext } from './useService';
 
 export default () => {
   const { userName, roomId, data, socket, updateData } = useContext(SocketContext);
@@ -8,7 +8,6 @@ export default () => {
 
   const send = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('send data')
     if (currentMsg !== "") {
       const msgData: any = {
         roomId,

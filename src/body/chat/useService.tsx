@@ -11,14 +11,17 @@ interface IMsgDataType {
 export const SocketContext = createContext({
   socket: null,
   data: [],
+  updateData: data => { },
   userName: "",
   roomId: "",
-  updateData: data => { }
+  generating: false,
+  updateGenerating: data => { },
 });
 
 export const useSocket = () => {
   const [socket, setSocket] = useState<any>(null);
   const [data, setData] = useState<any>([]);
+  const [generating, setGenerating] = useState();
 
   useEffect(() => {
     const get = async () => {
@@ -37,10 +40,13 @@ export const useSocket = () => {
       socket.on('receive_msg', (data: IMsgDataType) => {
         updateData(data);
       });
+      socket.on('generating', options => {
+        setGenerating(options.generating);
+      });
     }
   }, [socket]);
 
   const updateData = data => setData(st => ([...st, data]));
 
-  return { socket, data, setData: updateData };
+  return { socket, data, setData: updateData, generating, setGenerating };
 }
