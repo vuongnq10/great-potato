@@ -9,14 +9,12 @@ export default (_, res) => {
 
   const io = new Server(res?.socket?.server);
   io.on("connection", (socket) => {
-    console.log("A user connected:", socket.id);
     socket.on("join_room", (roomId, cb) => {
       if (!roomId) {
         cb(socket.id);
       } else {
         socket.join(roomId);
       }
-      console.log(`user with id-${socket.id || roomId} joined room - ${socket.id || roomId}`);
     });
 
     socket.on("send_msg", (data) => {
@@ -30,6 +28,10 @@ export default (_, res) => {
     //-----
     socket.on("generating", (nonce, options) => {
       socket.to(nonce).emit("generating", options);
+    });
+
+    socket.onAny((event, ...args) => {
+      console.log(event, args);
     });
   });
 
