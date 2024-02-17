@@ -16,7 +16,7 @@ const Index = () => {
       {!!user.name &&
         <div style={{ display: 'flex' }}>
           <h3 className="resume-title" style={{ flexGrow: 1 }}>
-            {`Hi, ${user.name}`}
+            {`Hi, ${user.name} - ${user.creator}`}
           </h3>
           <i
             className="bi mobile-nav-toggle bi-x"

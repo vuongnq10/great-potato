@@ -1,0 +1,48 @@
+.bingo-main {
+  margin-bottom: 12px;
+}
+
+.numbers {
+  display: flex;
+  font-size: 24px;
+  color: #18d26e;
+  height: 56px;
+  margin-bottom: 24px;
+}
+
+.numbers .number-box {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  display: flex;
+  flex-grow: 1;
+}
+
+.numbers .number-box .item {
+  width: 56px;
+  text-align: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.numbers .generating {
+  color: #18d26e;
+  border-radius: 12px;
+  width: 56px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 12px;
+}
+
+.get-number {
+  background: #18d26e;
+  border: 0;
+  padding: 10px 30px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 4px;
+  width: 100%;
+}
