@@ -33,6 +33,12 @@ export const useService = () => {
     });
   };
 
+  const disconnect = () => {
+    socket?.disconnect();
+    setUser({ name: "", creator: false });
+    removeUser();
+  }
+
   useEffect(() => {
     if (nonce) {
       setUser(getUser());
@@ -56,5 +62,5 @@ export const useService = () => {
   }, []);
 
 
-  return { user, setUser: setupUser, nonce };
+  return { user, setUser: setupUser, nonce, disconnect };
 };
