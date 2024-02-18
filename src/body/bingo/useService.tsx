@@ -17,8 +17,8 @@ export const useSocket = () => {
 
   useEffect(() => {
     const get = async () => {
-      await fetch('/api/bingo');
-      const socketIO = io();
+      // await fetch('/api/bingo');
+      const socketIO = io("", { path: '/api/bingo' });
       setSocket(socketIO);
     };
     get();
