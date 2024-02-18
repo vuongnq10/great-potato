@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import { useService } from "./useService";
+import { useState, useContext } from 'react';
+import { useService, SocketContext } from "./useService";
 
 const Index = () => {
-  const { user, setUser, nonce, disconnect } = useService();
+  const { socket } = useContext(SocketContext);
+  const { user, setUser, nonce, disconnect } = useService(socket);
   const [name, setName] = useState("");
 
   const setupUser = () => {

@@ -4,19 +4,38 @@ import { useSearchParams, useRouter } from 'next/navigation';
 
 import { UserType } from './type';
 
-export const SocketContext = createContext({});
+export const SocketContext = createContext({
+  socket: null,
+});
 
 const getUser = () => JSON.parse(localStorage.getItem('user') || `{}`);
 const saveUser = user => localStorage.setItem('user', JSON.stringify(user));
 const removeUser = () => localStorage.removeItem('user');
 
-export const useService = () => {
+export const useSocket = () => {
+  const [socket, setSocket] = useState<any>(null);
+
+  useEffect(() => {
+    const get = async () => {
+      await fetch('/api/bingo');
+      const socketIO = io();
+      setSocket(socketIO);
+    };
+    get();
+
+    return () => {
+      socket?.disconnect();
+    }
+  }, []);
+  return { socket };
+}
+
+export const useService = socket => {
   const router = useRouter();
   const params = useSearchParams() || {};
   // @ts-ignore:next-line
   const nonce = params?.get("nonce") || "";
 
-  const [socket, setSocket] = useState<any>(null);
   const [user, setUser] = useState<UserType>({ name: "", creator: false });
 
   const setupUser = user => {
@@ -40,27 +59,16 @@ export const useService = () => {
   }
 
   useEffect(() => {
-    if (nonce) {
-      setUser(getUser());
-    } else {
-      setUser({ name: "", creator: false });
-      removeUser();
+    if (socket) {
+      if (nonce) {
+        const user = getUser();
+        setupUser(user);
+      } else {
+        setUser({ name: "", creator: false });
+        removeUser();
+      }
     }
-  }, [nonce]);
-
-  useEffect(() => {
-    const get = async () => {
-      await fetch('/api/bingo');
-      const socketIO = io();
-      setSocket(socketIO);
-    };
-    get();
-
-    return () => {
-      socket?.disconnect();
-    }
-  }, []);
-
+  }, [nonce, socket]);
 
   return { user, setUser: setupUser, nonce, disconnect };
 };

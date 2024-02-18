@@ -1,4 +1,5 @@
 import { Server } from "socket.io";
+import { getRandom1 } from 'utils/bingo';
 
 export default (_, res) => {
   if (res?.socket?.server?.io) {
@@ -27,7 +28,10 @@ export default (_, res) => {
 
     //-----
     socket.on("generating", (nonce, options) => {
-      socket.to(nonce).emit("generating", options);
+      io.in(nonce).emit("generating", {
+        ...options,
+        bingoNumber: getRandom1()
+      });
     });
 
     socket.onAny((event, ...args) => {
