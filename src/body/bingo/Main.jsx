@@ -10,6 +10,7 @@ const Index = () => {
   const { socket } = useContext(SocketContext);
   const { user, nonce } = useService(socket);
   const [number, setNumber] = useState(0);
+  const [numbers, setNumbers] = useState([]);
 
   const genNumber = () => {
     socket.emit('generating', nonce, { generating: true });
@@ -30,17 +31,23 @@ const Index = () => {
         setNumber(options.bingoNumber);
       }
     });
+
   }, [socket]);
+
+  useEffect(() => {
+    socket?.on('numbersLine', numbers => {
+      setNumbers(numbers)
+    });
+  }, [socket, numbers]);
 
   return (
     <div className="bingo-main">
       <div className="numbers">
         <div className="generating">{`${number || '-'}`}</div>
         <div className="number-box">
-          <div className="item">12</div>
-          <div className="item">12</div>
-          <div className="item">12</div>
-          <div className="item">12</div>
+          {numbers.map((i, idx) => (
+            <div className="item" key={idx}>{i}</div>
+          ))}
         </div>
       </div>
       {user?.creator && (

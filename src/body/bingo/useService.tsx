@@ -17,8 +17,8 @@ export const useSocket = () => {
 
   useEffect(() => {
     const get = async () => {
-      await fetch('/api/bingo');
-      const socketIO = io();
+      // const socketIO = io('https://great-potato-414722.ts.r.appspot.com');
+      const socketIO = io('http://localhost:3001');
       setSocket(socketIO);
     };
     get();
