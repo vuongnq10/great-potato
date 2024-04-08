@@ -15,7 +15,8 @@ export default async function handler(req, res): Promise<any> {
         ...req.headers,
         ...req.body || {},
         ip: `${req.headers['x-forwarded-for'] || ''}`.split(/, /)[0],
-        socket: { remoteAddress: req?.socket?.remoteAddress }
+        socket: { remoteAddress: req?.socket?.remoteAddress },
+        date: `${new Date()}`
       };
       const onwer = `${req?.headers?.cookie}`.indexOf("onwer=1") > -1;
 
