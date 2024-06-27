@@ -1,0 +1,2 @@
+[functions."bot"]
+schedule = "*/5 * * * *"
