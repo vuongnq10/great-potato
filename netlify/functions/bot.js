@@ -5,4 +5,8 @@ const handler = () => {
   };
 };
 
-export { handler };
+const config = {
+  schedule: "*/5 * * * *",
+};
+
+export { handler, config };
